@@ -13,6 +13,17 @@ const TAB_ICON = {
   Settings: 'md-settings',
 };
 
+const Settings = () => (
+  <SafeArea>
+    <Text>Settings</Text>
+  </SafeArea>
+);
+const Map = () => (
+  <SafeArea>
+    <Text>Map</Text>
+  </SafeArea>
+);
+
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
 
@@ -34,8 +45,8 @@ export const AppNavigator = () => {
         }}
       >
         <Tab.Screen name='Restaurant' component={RestaurantsNavigator} />
-        {/* <Tab.Screen name='Map' component={Map} />
-        <Tab.Screen name='Settings' component={SettingsScreen} /> */}
+        <Tab.Screen name='Map' component={Map} />
+        <Tab.Screen name='Settings' component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>
   );
